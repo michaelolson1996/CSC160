@@ -11,7 +11,7 @@ namespace App_Dev_Day_1_ex
 
             if (args.Length != 1)
             {
-                throw new Exception("you suck, give me one arg");
+                throw new Exception("Please provide one valid number");
             }
 
             int number;
