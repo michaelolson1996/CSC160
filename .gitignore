@@ -1,0 +1,9 @@
+**/[Oo]bj
+**/[Bb]in
+**/*.csproj
+**/*.csproj.*
+**/*.sln
+**/*.config
+**/v16
+**/DesignTimeBuild
+**/App.config
