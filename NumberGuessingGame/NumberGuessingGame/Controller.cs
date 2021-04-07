@@ -20,14 +20,21 @@ namespace NumberGuessingGame
                 games.Add(new Model(false, 0));
 
             messenger.DisplayWelcomeMessage();
-
-            while (gameInSession)
+            try
             {
-                this.GetMaxNumFromUser();
-                this.GetGuessesFromUser();
-                this.requestAnotherGame();
-                gameInSession = this.ProcessRequest();
+                while (gameInSession)
+                {
+                    this.GetMaxNumFromUser();
+                    this.GetGuessesFromUser();
+                    this.requestAnotherGame();
+                    gameInSession = this.ProcessRequest();
+                }
             }
+            finally
+            {
+                messenger.ReturnDisplayToNormal();
+            }
+
         }
 
         private void DetermineSoundFromCli(string arg)
@@ -176,7 +183,6 @@ namespace NumberGuessingGame
         {
             if (this.isPlaying)
             {
-
                 Console.Clear();
                 this.PromptUserForNewGameSound();
                 return true;

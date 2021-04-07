@@ -154,7 +154,7 @@ namespace NumberGuessingGame
             Console.ForegroundColor = colors[11];
         }
 
-        private void ReturnDisplayToNormal()
+        public void ReturnDisplayToNormal()
         {
             Console.BackgroundColor = colors[0];
             Console.ForegroundColor = colors[15];
