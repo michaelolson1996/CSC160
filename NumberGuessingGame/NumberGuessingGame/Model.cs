@@ -10,14 +10,15 @@ namespace NumberGuessingGame
     {
         public int MaxNumber { get; set; }
         public int CorrectNumber { get; set; }
+        public int TriesLeft { get; set; }
         public bool HasSound { get; set; }
+        public int GameId { get; set; }
 
-
-        public Model(int maxNumber, int correctNumber, bool hasSound)
+        public Model(bool hasSound, int gameId)
         {
-            MaxNumber = maxNumber;
-            CorrectNumber = correctNumber;
             HasSound = hasSound;
+            TriesLeft = 5;
+            GameId = gameId;
         }
     }
 }
