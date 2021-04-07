@@ -30,9 +30,6 @@ namespace NumberGuessingGame
             }
         }
 
-        // TODO: Implement sound when requested
-        // TODO: Add color schemes
-
         private void DetermineSoundFromCli(string arg)
         {
             if (arg.Equals("sound"))
@@ -65,6 +62,30 @@ namespace NumberGuessingGame
             }
         }
 
+        private void PromptUserForNewGameSound()
+        {
+            bool gettingResponse = true;
+
+            while (gettingResponse)
+            {
+                string response = messenger.PromptUserForNewGameSound();
+                if (response.ToLower().Equals("y") || response.ToLower().Equals("yes"))
+                {
+                    games.Add(new Model(true, 0));
+                    gettingResponse = false;
+                }
+                else if (response.ToLower().Equals("n") || response.ToLower().Equals("no"))
+                {
+                    games.Add(new Model(false, 0));
+                    gettingResponse = false;
+                }
+                else
+                {
+                    messenger.DisplayStringError();
+                }
+            }
+        }
+
 
         private void GetMaxNumFromUser()
         {
@@ -76,7 +97,7 @@ namespace NumberGuessingGame
                 if (Int32.TryParse(messenger.RequestMaximumNumber(), out number) && number > 0)
                 {
                     games[games.Count - 1].MaxNumber = number;
-                    games[games.Count - 1].CorrectNumber = rng.Next(1, number);
+                    games[games.Count - 1].CorrectNumber = rng.Next(1, number + 1);
                     gettingMaxNum = false;
                 }                    
                 else
@@ -95,7 +116,9 @@ namespace NumberGuessingGame
 
                 if (Int32.TryParse(messenger.RequestGuessNumber(), out number) && number > 0 && number < games[games.Count - 1].MaxNumber)
                 {
-                    Console.Beep();
+                    if (games[games.Count - 1].HasSound)
+                        Console.Beep();
+
                     if (number == games[games.Count - 1].CorrectNumber) {
                         messenger.DisplayWinMessage(number);
                         playerIsGuessing = false;
@@ -153,7 +176,9 @@ namespace NumberGuessingGame
         {
             if (this.isPlaying)
             {
+
                 Console.Clear();
+                this.PromptUserForNewGameSound();
                 return true;
             }
             else
