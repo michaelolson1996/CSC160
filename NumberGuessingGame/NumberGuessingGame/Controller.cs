@@ -30,15 +30,39 @@ namespace NumberGuessingGame
             }
         }
 
-        // TODO: Add function to verify user does not want to use sound
         // TODO: Implement sound when requested
         // TODO: Add color schemes
+
         private void DetermineSoundFromCli(string arg)
         {
             if (arg.Equals("sound"))
                 games.Add(new Model(true, 0));
             else
-                games.Add(new Model(false, 0)); 
+                this.PromptUserForSoundConfirmation(); 
+        }
+
+        private void PromptUserForSoundConfirmation()
+        {
+            bool gettingResponse = true;
+
+            while (gettingResponse)
+            {
+                string response = messenger.PromptUserForSound();
+                if (response.ToLower().Equals("y") || response.ToLower().Equals("yes"))
+                {
+                    games.Add(new Model(true, 0));
+                    gettingResponse = false;
+                }
+                else if (response.ToLower().Equals("n") || response.ToLower().Equals("no"))
+                {
+                    games.Add(new Model(false, 0));
+                    gettingResponse = false;
+                }
+                else
+                {
+                    messenger.DisplayStringError();
+                }
+            }
         }
 
 
@@ -71,6 +95,7 @@ namespace NumberGuessingGame
 
                 if (Int32.TryParse(messenger.RequestGuessNumber(), out number) && number > 0 && number < games[games.Count - 1].MaxNumber)
                 {
+                    Console.Beep();
                     if (number == games[games.Count - 1].CorrectNumber) {
                         messenger.DisplayWinMessage(number);
                         playerIsGuessing = false;
