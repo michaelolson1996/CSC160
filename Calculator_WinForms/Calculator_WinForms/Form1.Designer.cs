@@ -47,6 +47,8 @@ namespace Calculator_WinForms
             this.button15 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +75,8 @@ namespace Calculator_WinForms
             this.tableLayoutPanel1.Controls.Add(this.button14, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.button15, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.richTextBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button16, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.button17, 3, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -252,6 +256,26 @@ namespace Calculator_WinForms
             this.textBox1.Size = new System.Drawing.Size(325, 27);
             this.textBox1.TabIndex = 0;
             // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(3, 513);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(169, 98);
+            this.button16.TabIndex = 16;
+            this.button16.Text = "C";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.clearAll);
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(528, 105);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(172, 96);
+            this.button17.TabIndex = 17;
+            this.button17.Text = "C/E";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.clearOne);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -285,6 +309,8 @@ namespace Calculator_WinForms
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button button17;
     }
 }
 
