@@ -46,9 +46,9 @@ namespace Calculator_WinForms
             this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,7 @@ namespace Calculator_WinForms
             // 
             // button5
             // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.Location = new System.Drawing.Point(178, 309);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(169, 96);
@@ -249,13 +250,6 @@ namespace Calculator_WinForms
             this.richTextBox1.TabIndex = 15;
             this.richTextBox1.Text = "";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(325, 27);
-            this.textBox1.TabIndex = 0;
-            // 
             // button16
             // 
             this.button16.Location = new System.Drawing.Point(3, 513);
@@ -275,6 +269,13 @@ namespace Calculator_WinForms
             this.button17.Text = "C/E";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.clearOne);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(325, 27);
+            this.textBox1.TabIndex = 0;
             // 
             // Form1
             // 
