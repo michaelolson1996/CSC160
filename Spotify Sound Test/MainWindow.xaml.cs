@@ -1,5 +1,4 @@
-﻿using SQL_DB_APP.DataSetTableAdapters;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,30 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SQL_DB_APP
+namespace Spotify_Sound_Test
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private GameTableAdapter gta = new GameTableAdapter();
-        private DataSet ds = new DataSet();
-
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void PlayMusic(object sender, RoutedEventArgs e)
         {
-            gta.Fill(ds.Game);
-            DataContext = ds.Game;
-        }
-
-        private void Update_Game_Table(object sender, RoutedEventArgs e)
-        {
-            gta.Update(ds);
+            mePlayer.LoadedBehavior = MediaState.Play;
         }
     }
 }

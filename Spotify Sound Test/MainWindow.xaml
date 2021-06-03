@@ -1,0 +1,13 @@
+﻿<Window x:Class="Spotify_Sound_Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Spotify_Sound_Test"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <MediaElement Source="https://p.scdn.co/mp3-preview/b1aec4586cd200a817ed4d28baaaa2b3aa483e26?cid=f4b418bcb6cc4ae9b68d96ea8b72ed54" LoadedBehavior="Pause" Name="mePlayer" />
+        <Button x:Name="myButton" Content="Button" HorizontalAlignment="Left" Margin="364,155,0,0" VerticalAlignment="Top" Click="PlayMusic"/>
+    </Grid>
+</Window>
