@@ -33,6 +33,7 @@ namespace SQL_DB_APP
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             uta.Fill(ds.Users);
+            DataContext = ds.Users.DefaultView;
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
